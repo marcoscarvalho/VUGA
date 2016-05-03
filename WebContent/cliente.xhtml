@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+
+		<h:form>
+
+			<p:growl id="messages" showDetail="true" />
+
+			<h:panelGrid columns="3">
+				<h:outputText value="Nome:" />
+				<p:inputText id="nome" value="#{clienteMB.cliente.nome}"
+					required="true" requiredMessage="Faltou nome" />
+				<h:message for="nome"></h:message>
+
+				<h:outputText value="RG:" />
+				<p:inputText id="rg" value="#{clienteMB.cliente.rg}" required="true"
+					requiredMessage="Faltou rg" />
+				<h:message for="rg"></h:message>
+
+				<h:outputText value="CPF:" />
+				<p:inputText id="cpf" value="#{clienteMB.cliente.cpf}"
+					required="true" requiredMessage="Faltou CPF" />
+				<h:message for="cpf"></h:message>
+
+				<h:outputText value="Endereço:" />
+				<p:inputText id="endereco" value="#{clienteMB.cliente.endereco}"
+					required="true" requiredMessage="Faltou Endereço" />
+				<h:message for="endereco"></h:message>
+
+				<h:outputText value="Data de Nascimento:" />
+				<p:inputMask id="dataDeNascimento"
+					value="#{clienteMB.cliente.dataDeNascimento}" mask="99/99/9999"
+					requiredMessage="Faltou data de nascimento">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</p:inputMask>
+				<h:message for="dataDeNascimento"></h:message>
+
+				<h:outputText value="Telefone:" />
+				<p:inputMask id="telefone" value="#{clienteMB.cliente.telefone}"
+					mask="(99) 9999-9999" requiredMessage="Faltou Telefone" />
+				<h:message for="telefone"></h:message>
+
+				<h:outputText value="Email:" />
+				<p:inputText id="email" value="#{clienteMB.cliente.email}"
+					required="true" requiredMessage="Faltou Email" />
+				<h:message for="email"></h:message>
+
+				<h:outputText value="Password: " />
+				<p:inputText id="password" value="#{clienteMB.cliente.password}"
+					required="true" requiredMessage="No mínimo 5 caracteres"
+					type="password" maxlength="10">
+					<f:validateLength minimum="5" />
+				</p:inputText>
+				<h:message for="email"></h:message>
+
+				<p:commandButton value="Salvar" action="#{clienteMB.salvar}"
+					update="messages" />
+				<p:commandButton value="Remover" action="#{clienteMB.remover}"
+					update="messages" />
+
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

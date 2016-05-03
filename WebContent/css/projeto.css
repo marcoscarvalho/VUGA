@@ -1,0 +1,129 @@
+body {
+	background: url('../imgs/pg1.jpg') no-repeat center fixed;	
+	margin:0px;
+    height:100%;
+    width: 100%;
+    background-size: 115%;     
+}
+
+h1 {
+	margin: 0;
+}
+
+.pagina {
+	width: 100%;
+}
+
+.login {	
+	position: fixed;
+	right: 0pt;
+	top: 35pt;
+	margin: 0;
+}
+
+.corpo {
+	margin-top: 100pt;
+	width: 55%;	
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 5%;
+	color: gray;
+}
+
+#header {
+	width: 100%;
+	background-color: #EEDD82;
+}
+
+.header-block {
+	margin: 0 auto;
+}
+
+.header-block:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+
+.logo {
+	position: fixed;
+	top: 35pt;
+	margin: 0;	
+	background: url('../imgs/vuga.jpg') no-repeat;
+	width: 230px;
+	height: 197px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.rodape {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 5%;
+	background-color: gray;
+}
+/* .tudo {
+	min-height: 100%;
+	position: fixed;
+}
+
+.topo {
+	background: #ff0;
+	padding: 10px;
+}
+
+.conteudo {
+	padding: 10px;
+	padding-bottom: 60px;
+}
+ */
+Leia
+
+ 
+
+mais
+
+ 
+
+no
+
+ 
+
+Oficina
+
+ 
+
+da
+
+ 
+
+Net
+
+
+:
+
+ 
+
+http
+
+
+:
+//www
+
+
+.oficinadanet
+
+
+.com
+
+
+.br
+/artigo/css/criando-um-rodape-sempre-embaixo-do-site
+
+
+#ixzz2mzm9i42T

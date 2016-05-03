@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+
+		<h:form>
+
+			<h:dataTable width="50%" id="panel1" value="#{produtoMB.produtos}" var="produto"
+				rendered="#{not empty produtoMB.produtos}">				
+				<h:column><center>
+					<f:facet name="header">Nome</f:facet>
+					<h:commandLink action="#{produtoMB.editar}">
+						<h:outputText value="#{produto.nome}" />
+						<f:setPropertyActionListener target="#{produtoMB.idProduto}"
+							value="#{produto.id}" />
+					</h:commandLink></center>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Categoria</f:facet>
+					<h:outputText value="#{produto.categoria.nome}"></h:outputText>
+				</h:column>
+				<h:column>
+					<center><f:facet name="header">Valor</f:facet>
+					<h:outputText value="#{produto.valor}">
+						<f:convertNumber pattern="#,##0.00" />
+					</h:outputText></center>
+				</h:column>
+				<h:column>
+					<center><f:facet name="header">Imagem</f:facet>
+					<h:commandLink action="#{produtoMB.editar}">
+						<h:graphicImage value="ImagemServlet?idProduto=#{produto.id}"
+						height="100" width="100"></h:graphicImage>
+						<f:setPropertyActionListener target="#{produtoMB.idProduto}"
+							value="#{produto.id}" />
+					</h:commandLink>
+					</center>
+				</h:column>
+			</h:dataTable>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

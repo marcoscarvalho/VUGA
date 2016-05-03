@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+		<h:form>
+			<h:dataTable id="panel1" value="#{historicoMB.pedidos}" var="pedido"
+				rendered="#{not empty historicoMB.pedidos}">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{pedido.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Data Pedido</f:facet>
+					<h:outputText value="#{pedido.dataEfetuarPedido}">
+						<f:convertDateTime pattern="dd/MM/yyyy hh:mm" />
+					</h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">InfoPedidos</f:facet>
+					<h:dataTable id="panel2" value="#{pedido.itens}" var="item">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{item.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Qtd</f:facet>
+							<h:outputText value="#{item.quantidade}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{item.produto.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Valor Unitário</f:facet>
+							<h:outputText value="#{item.valorUnitario}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Valor Total</f:facet>
+							<h:outputText value="#{item.valorTotal}" />
+						</h:column>
+					</h:dataTable>
+				</h:column>
+
+
+			</h:dataTable>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

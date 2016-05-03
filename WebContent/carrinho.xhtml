@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+
+		<h:form>
+			<p:growl id="messages" showDetail="true" />
+
+			<h:dataTable value="#{carrinhoMb.pedido.itens}" var="item"
+				rendered="#{not empty carrinhoMb.pedido.itens}">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:commandLink action="#{produtoMB.infoProduto}">
+						<h:outputText value="#{item.produto.nome}" />
+						<f:setPropertyActionListener target="#{produtoMB.idProduto}"
+							value="#{item.produto.id}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Quantidade</f:facet>
+					<h:outputText value="#{item.quantidade}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Valor Unitário</f:facet>
+					<h:outputText value="#{item.valorUnitario}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Valor Total</f:facet>
+					<h:outputText value="#{item.valorTotal}" />
+				</h:column>
+				<h:column>
+					<h:commandLink action="#{carrinhoMb.adicionarProduto}">
+						<h:outputText value="Aumentar" />
+						<f:setPropertyActionListener target="#{carrinhoMb.idProduto}"
+							value="#{item.produto.id}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<h:commandLink action="#{carrinhoMb.diminuirQuantidadeDeProduto}">
+						<h:outputText value="Diminuir" />
+						<f:setPropertyActionListener target="#{carrinhoMb.idProduto}"
+							value="#{item.produto.id}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+
+			<br />
+			<br />
+
+			<h:panelGrid columns="2"
+				rendered="#{not empty carrinhoMb.pedido.itens}">
+				<h:outputText value="Valor Total do Pedido:" />
+				<h:outputText value="#{carrinhoMb.pedido.valorTotal}">
+					<f:convertNumber pattern="#,##0.00" />
+				</h:outputText>
+
+				<h:inputHidden />
+				<h:commandLink action="#{carrinhoMb.efetuarPedido}">
+					<h:outputText value="Efetuar Pedido" />
+				</h:commandLink>
+			</h:panelGrid>
+
+			<br />
+			<br />
+			<h:commandLink action="#{carrinhoMb.continuarComprando}">
+				<h:outputText value="Continuar Comprando" />
+			</h:commandLink>
+
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

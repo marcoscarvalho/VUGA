@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+
+		<h:form>
+
+			<p:growl id="messages" showDetail="true" />
+
+			<h:panelGrid columns="2">
+
+				<h:inputHidden />
+				<h:inputHidden value="#{produtoMB.produto.id}" />
+
+				<h:outputText value="Nome:" />
+				<h:outputText value="#{produtoMB.produto.nome}" />
+
+				<h:outputText value="Categoria:" />
+				<h:outputText value="#{produtoMB.produto.categoria.nome}" />
+
+				<h:outputText value="Valor do Produto:" />
+				<h:outputText value="#{produtoMB.produto.valor}">
+					<f:convertNumber pattern="#,##0.00" />
+				</h:outputText>
+
+				<h:outputText value="Destaque:" />
+				<h:outputText value="#{produtoMB.produto.destaque}" />
+				
+				<h:outputText value="Quantidade em Estoque:" />
+				<h:outputText value="#{produtoMB.produto.quantidade}" />
+
+				<h:outputText value="" />
+				<h:graphicImage
+					value="ImagemServlet?idProduto=#{produtoMB.produto.id}"
+					height="100" width="100" />
+
+				<h:outputText value="Quantidade:" />
+				<p:inputText id="quantidade" value="#{carrinhoMb.qtdProduto}"
+					required="true" requiredMessage="Adicionar Quantidade" />
+				<h:message for="quantidade" />
+
+				<h:inputHidden />
+				<p:commandButton value="Comprar"
+					action="#{carrinhoMb.adicionarQtdProdutos}">
+					<f:setPropertyActionListener target="#{carrinhoMb.idProduto}"
+						value="#{produtoMB.produto.id}" />
+				</p:commandButton>
+			</h:panelGrid>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

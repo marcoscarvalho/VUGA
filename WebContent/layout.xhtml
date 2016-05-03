@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Vai Uma Gelada Ae!!!!</title>
+	<link rel="stylesheet" type="text/css" href="css/projeto.css" />
+</h:head>
+
+<h:body>
+
+	<center>
+
+		<div class="menu">
+			<p:megaMenu>
+				<p:menuitem value="Home" url="index.jsf" />
+				<p:menuitem value="Histórico" url="historico.jsf" />
+				<p:menuitem value="Carrinho" url="carrinho.jsf" />
+				<p:submenu label="Cliente" icon="ui-icon-check">
+					<p:column>
+						<p:submenu label="Dados Cadastrais">
+							<!-- 							<p:menuitem value="Entrar" url="login.jsf" icon="ui-icon-contact" /> -->
+							<p:menuitem value="Cadastrar" url="cliente.jsf" />
+							<p:menuitem value="Clientes" url="clientes.jsf"
+								icon="ui-icon-check" />
+						</p:submenu>
+					</p:column>
+				</p:submenu>
+
+				<p:submenu label="Produtos" icon="ui-icon-document">
+					<p:column>
+						<p:submenu label="Cerveja">
+							<p:menuitem value="Cadastrar Produto" url="produto.jsf" />
+							<p:menuitem value="Todos os Produtos" url="produtos.jsf" />
+							<p:menuitem value="Cadastrar Categoria" url="categoria.jsf" />
+							<p:menuitem value="Todas as Categorias" url="categorias.jsf" />
+						</p:submenu>
+					</p:column>
+				</p:submenu>
+			</p:megaMenu>
+		</div>
+
+
+		<div class="pagina">
+			<div class="login">
+				<h:form id="login">
+
+					<h:panelGrid columns="3" rendered="#{loginMB.cliente == null}">
+						<h:outputLabel for="usuario" value="Usuário: *" />
+						<p:inputText id="usuario" value="#{loginMB.login}" required="true"
+							label="Usuario">
+							<f:validateLength minimum="5" />
+						</p:inputText>
+						<p:message for="usuario" />
+
+						<h:outputLabel for="password" value="Password: *" />
+						<p:inputText id="password" value="#{loginMB.password}"
+							required="true" label="Password" type="password">
+							<f:validateLength minimum="5" />
+						</p:inputText>
+						<p:message for="password" />
+
+						<p:commandButton value="Logar" id="logar"
+							action="#{loginMB.logar}" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="2" rendered="#{loginMB.cliente != null}">
+						<h:outputLabel value="Bem Vindo" />
+						<h:outputLabel value="#{loginMB.cliente.nome}" />
+					</h:panelGrid>
+				</h:form>
+			</div>
+			<div class="logo"></div>
+			<div class="corpo">
+
+				<ui:insert name="corpo">
+
+				</ui:insert>
+
+				<br />
+			</div>
+			<div class="rodape" style="clear: both">
+				<ui:insert name="rodape">Trabalho de Marcos Carvalho e Aline Pereto</ui:insert>
+			</div>
+		</div>
+
+	</center>
+</h:body>
+</html>
+
+
+
+
+<!-- <div id="header">
+				<div class="header-block">
+					<h1 class="logo">
+						<a href="index.jsf" />
+					</h1>
+				</div>
+			</div> -->

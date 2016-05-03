@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+		<h:form>
+			<h:panelGrid columns="3">
+				<h:inputHidden />
+				<h:inputHidden value="#{categoriaMB.categoria.id}" />
+				<h:inputHidden />
+
+				<h:outputText value="Nome:" />
+				<p:inputText id="nome" value="#{categoriaMB.categoria.nome}"
+					required="true" requiredMessage="Faltou nome" />
+				<h:message for="nome"></h:message>
+
+				<p:commandButton value="Salvar" action="#{categoriaMB.salvar}" />
+				<h:commandButton value="Remover" action="#{categoriaMB.remover}" />
+
+			</h:panelGrid>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="corpo">
+
+		<h:form>
+			<h:dataTable value="#{clienteMB.clientes}" var="cliente">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{cliente.nome}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">RG</f:facet>
+					<h:outputText value="#{cliente.rg}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">CPF</f:facet>
+					<h:outputText value="#{cliente.cpf}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Endereço</f:facet>
+					<h:outputText value="#{cliente.endereco}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Data de Nascimento</f:facet>
+					<h:outputText value="#{cliente.dataDeNascimento}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Telefone</f:facet>
+					<h:outputText value="#{cliente.telefone}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">E-mail</f:facet>
+					<h:outputText value="#{cliente.email}"></h:outputText>
+				</h:column>
+			</h:dataTable>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>
