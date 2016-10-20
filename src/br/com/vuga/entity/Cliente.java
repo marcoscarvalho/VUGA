@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "cliente")
-@NamedQueries({ @NamedQuery(name = "getLogin", query = "from Cliente c where c.login = :login and c.password = :password") })
+@NamedQueries({ @NamedQuery(name = "getLogin", query = "select c from Cliente c where c.login = :login and c.password = :password") })
 public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -12,4 +12,11 @@ public class Conexao {
 	public static EntityManager getEntityManager() {
 		return emf.createEntityManager();
 	}
+	
+	public static void main(String[] args) {
+		// Use persistence.xml configuration
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("vuga");
+		EntityManager em = emf.createEntityManager();
+		System.out.println(em);
+	}
 }

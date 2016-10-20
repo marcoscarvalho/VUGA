@@ -44,7 +44,7 @@ public class CarrinhoMb implements Serializable {
 		if (produto != null) {
 
 			if (qtdProduto < 1) {
-				FacesMessage msg = new FacesMessage("Quantidade Inválida");
+				FacesMessage msg = new FacesMessage("Quantidade InvÃ¡lida");
 				FacesContext.getCurrentInstance().addMessage(null, msg);
 
 				return null;

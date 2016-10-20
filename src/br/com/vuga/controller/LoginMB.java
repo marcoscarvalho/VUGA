@@ -41,7 +41,7 @@ public class LoginMB implements Serializable {
 			return "index.jsf";
 
 		} catch (Throwable e) {
-			FacesMessage msg = new FacesMessage("Cliente n„o encontrado");
+			FacesMessage msg = new FacesMessage("Cliente n√£o encontrado");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 			return null;
 		}

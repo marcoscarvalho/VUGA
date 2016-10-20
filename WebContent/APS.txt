@@ -1,22 +1,22 @@
-APS - Desenvolvimento dos protótipos em HTML da aplicação - ecommerce
+APS - Desenvolvimento dos protÃ³tipos em HTML da aplicaÃ§Ã£o - ecommerce
 
-Criar as telas em HTML + CSS para a aplicação
+Criar as telas em HTML + CSS para a aplicaÃ§Ã£o
 
-Requisitos obrigatórios
+Requisitos obrigatÃ³rios
 
-1. Cadastro de clientes (criar o formulário para isso)
-2. Cadastro de produtos (criar o formulário)
+1. Cadastro de clientes (criar o formulÃ¡rio para isso)
+2. Cadastro de produtos (criar o formulÃ¡rio)
 3. Roteiro de vendas (Cria a tela de listagem de produtos,
 tela de detalhes de produto, tela de carrinho de compras e
-tela para finalizar o pedido, ainda, configurar um layout padrão para a aplicação.
+tela para finalizar o pedido, ainda, configurar um layout padrÃ£o para a aplicaÃ§Ã£o.
 
 Requisitos Opcionais (ao menos um deve ser implementado)
 4. Criar cadastro de categorias
-5. Autenticação do cliente.
+5. AutenticaÃ§Ã£o do cliente.
 
 
 
 Desafio,
 
 fechar o pedido
-Criar uma entidade chamado pedido (id, numero, item_pedido(vários))
+Criar uma entidade chamado pedido (id, numero, item_pedido(vÃ¡rios))

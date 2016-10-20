@@ -72,7 +72,7 @@ public class ProdutoMB implements Serializable {
 			return "infoProduto.jsf";
 
 		} else {
-			FacesMessage msg = new FacesMessage("Produto n„o encontrado!");
+			FacesMessage msg = new FacesMessage("Produto n√£o encontrado!");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 
 			return "";
