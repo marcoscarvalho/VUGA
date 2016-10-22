@@ -18,5 +18,6 @@ public class Conexao {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("vuga");
 		EntityManager em = emf.createEntityManager();
 		System.out.println(em);
+		System.out.println("---------------------------------------------------");
 	}
 }
