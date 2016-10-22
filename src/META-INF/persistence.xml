@@ -14,7 +14,7 @@
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/vuga3" />
 			<property name="javax.persistence.jdbc.user" value="vuga3" />
-			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.password" value="fera" />
 
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="false" />
